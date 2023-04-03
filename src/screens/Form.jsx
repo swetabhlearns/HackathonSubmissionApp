@@ -78,7 +78,7 @@ const SubmissionForm = () => {
             <Form className='submissionFormContainer'>
                 <Form.Group className="mb-3" controlId="inputFormTitle">
                     <Form.Label>Title</Form.Label>
-                    <Form.Control type="text" placeholder="Normal text"
+                    <Form.Control type="text" placeholder="Title of your submission"
                         value={form.title}
                         onChange={(e) => {
                             setField('title', e.target.value)
@@ -92,7 +92,7 @@ const SubmissionForm = () => {
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="inputFormSummary">
                     <Form.Label>Summary</Form.Label>
-                    <Form.Control type="text" placeholder="Normal text"
+                    <Form.Control type="text" placeholder="A short summary of your submission (this will be visible with your submission)"
                         value={form.summary}
                         onChange={(e) => setField('summary', e.target.value)}
                         isInvalid={!!errors.summary}
@@ -107,6 +107,7 @@ const SubmissionForm = () => {
                 <Form.Group className="mb-3" controlId="inputFormDesc">
                     <Form.Label>Description</Form.Label>
                     <Form.Control as="textarea" rows={3}
+                        placeholder='Write a long description of your project. You can describe your idea and approach here.'
                         value={form.description}
                         onChange={(e) => { setField('description', e.target.value) }}
                         isInvalid={!!errors.description}
@@ -134,7 +135,7 @@ const SubmissionForm = () => {
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="inputFormHackathonName">
                     <Form.Label>Hackathon Name</Form.Label>
-                    <Form.Control type="text" placeholder="Normal text"
+                    <Form.Control type="text" placeholder="Enter the name of the hackathon"
                         value={form.hackathonName}
                         onChange={(e) => setField('hackathonName', e.target.value)}
                         isInvalid={!!errors.hackathonName}
@@ -146,7 +147,7 @@ const SubmissionForm = () => {
                 </Form.Group>
                 <Row className="mb-3">
                     <Form.Group as={Col} controlId="formGridStartDate">
-                        <Form.Label>Start Date</Form.Label>
+                        <Form.Label>Select start Date</Form.Label>
                         <Form.Control type="date"
                             value={form.startDate}
                             onChange={(e) => setField('startDate', e.target.value)}
@@ -158,7 +159,7 @@ const SubmissionForm = () => {
                         </Form.Control.Feedback>
                     </Form.Group>
                     <Form.Group as={Col} controlId="formGridEndDate">
-                        <Form.Label>Start Date</Form.Label>
+                        <Form.Label>Select end Date</Form.Label>
                         <Form.Control type="date"
                             value={form.endDate}
                             onChange={(e) => setField('endDate', e.target.value)}
@@ -173,7 +174,7 @@ const SubmissionForm = () => {
                 </Row>
                 <Form.Group className="mb-3" controlId="inputFormGithubLink">
                     <Form.Label>Github Repository</Form.Label>
-                    <Form.Control type="url" placeholder="Normal text"
+                    <Form.Control type="url" placeholder="Enter your submission’s public GitHub repository link"
                         value={form.github}
                         onChange={(e) => setField('github', e.target.value)}
                         isInvalid={!!errors.github}
@@ -185,7 +186,7 @@ const SubmissionForm = () => {
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="inputFormOtherLink">
                     <Form.Label>Other Links</Form.Label>
-                    <Form.Control type="url" placeholder="Normal text"
+                    <Form.Control type="url" placeholder="You can upload a video demo or URL of you demo app here."
                         value={form.other}
                         onChange={(e) => setField('other', e.target.value)}
                         isInvalid={!!errors.other}
@@ -195,11 +196,11 @@ const SubmissionForm = () => {
                         {errors.other}
                     </Form.Control.Feedback>
                 </Form.Group>
-                <Button variant="primary" type="submit" onClick={handleFormClick}>
+                <Button variant='primary' className='pt-8 pr-8' type="submit" onClick={handleFormClick}>
                     Submit
                 </Button>
             </Form>
-        </div>
+        </div >
     )
 }
 

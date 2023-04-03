@@ -9,7 +9,7 @@ import { useNavigate } from 'react-router-dom';
 
 const Edit = () => {
     const { details, filterData, setFilterData } = useContext(DataContext)
-    const [form, setForm] = useState({})
+    const [form, setForm] = useState({ title: details[0].title, summary: details[0].summary, description: details[0].description, startDate: details[0].startDate, endDate: details[0].endDate, github: details[0].github, other: details[0].other, hackathonName: details[0].hackathonName })
     const [errors, setErrors] = useState({})
     const [title, setTitle] = useState(details[0].title)
     const [summary, setSummary] = useState(details[0].summary)
@@ -18,10 +18,9 @@ const Edit = () => {
     const [endDate, setEndDate] = useState(details[0].endDate)
     const [github, setGithub] = useState(details[0].github)
     const [other, setOther] = useState(details[0].other)
-    const [hackathonName, setHackathonName] = useState(details[0].other)
+    const [hackathonName, setHackathonName] = useState(details[0].hackathonName)
 
     const navigate = useNavigate()
-
 
     const setField = (field, value) => {
         setForm({
@@ -32,8 +31,8 @@ const Edit = () => {
         }
     }
     const validateForm = () => {
-
         const { title, summary, description, startDate, endDate, github, other } = form
+        console.log('----', title, summary, form);
         const newErrors = {}
         if (!title || title === '') {
             newErrors.title = 'Please Enter A Title'
@@ -53,11 +52,10 @@ const Edit = () => {
         if (!github || github === '') {
             newErrors.github = 'Please Enter A Github Link'
         }
-
         return newErrors
     }
-
     const handleFormClick = (id) => (e) => {
+        console.log(title, summary);
         let idx = id
         e.preventDefault()
         const formErrors = validateForm()
@@ -66,8 +64,6 @@ const Edit = () => {
         }
         else {
             console.log('Form Submitted', form)
-            // setItemData([...itemData, form]);
-            // navigate('/')
             let index = filterData.map((e) => e.id).indexOf(id)
             let editData = [...filterData]
             editData[index] = form

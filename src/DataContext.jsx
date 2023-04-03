@@ -25,13 +25,14 @@ export function DataProvider({ children }) {
     }
 
     useEffect(() => {
+        console.log(itemData, filterData);
         if (!itemData.length) {
             setItemData(Data)
+            return
         }
         if (!filterData.length) {
             setFilterData(Data)
         }
-
     }, [filterData])
 
     return (

@@ -4,28 +4,24 @@ import DataContext from '../DataContext'
 
 const Filters = () => {
     const [searchParam, setSearchParam] = useState('')
-    const [dropDownVal, setDropDownVal] = useState('')
-    const { setFilterData, handleFavClick, handleAllClick, allSubmission, favSubmission, filterData } = useContext(DataContext)
+    const { setFilterData, handleFavClick, handleAllClick, allSubmission, favSubmission, filterData, itemData } = useContext(DataContext)
 
     let newFilterData = [...filterData]
 
     const handleDropDownChange = (e) => {
-        console.log(dropDownVal);
         if (e.target.value === 'newest') {
-            const newestFilterData = newFilterData.sort((a, b) => new Date(a.startDate) - new Date(b.startDate))
+            const newestFilterData = newFilterData.sort((a, b) => new Date(b.startDate) - new Date(a.startDate))
             setFilterData(newestFilterData)
-
         }
         if (e.target.value === 'oldest') {
-            const oldestFilterData = newFilterData.sort((a, b) => new Date(b.startDate) - new Date(a.startDate))
+            const oldestFilterData = newFilterData.sort((a, b) => new Date(a.startDate) - new Date(b.startDate))
             setFilterData(oldestFilterData)
         }
     }
-
     const handleSearch = (e) => {
         setSearchParam(e.target.value)
-
     }
+
     useEffect(() => {
         const filteredData = newFilterData.filter((item) => item.title.toLowerCase().includes(searchParam))
         setFilterData(filteredData)

@@ -69,10 +69,11 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  
 }
 .submissionFormContainer{
   width: 1000px;
+  padding-left: 142px;
 }
 .submissionFormHeader{
   font-weight: 500;
@@ -80,6 +81,7 @@
   line-height: 30px;
   padding-bottom: 40px;
   padding-top: 20px;
+  padding-left: 142px;
 }
 ::-webkit-calendar-picker-indicator{
     background-color: #000000;
@@ -301,4 +303,19 @@
 }
 .tab-active{
   border-bottom: 2px solid green;
+}
+.cardBodyDate{
+  color: #666666;
+  font-style: italic;
+  font-size: 14px;
+  line-height: 17px;
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 20px;
+}
+.cardBodySummary{
+  height: 100px;
+}
+.submissionForm{
+  padding-bottom: 30px;
 }

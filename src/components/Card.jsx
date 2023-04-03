@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { useNavigate } from 'react-router-dom';
 import DataContext from '../DataContext';
+import ReactTimeago from 'react-timeago';
 
 const Card = ({ item }) => {
     const navigate = useNavigate()
@@ -26,6 +27,16 @@ const Card = ({ item }) => {
                     <div className="cardBodySummary">
                         {item.summary}
                     </div>
+
+                </div>
+                <div className='cardBodyDate'>
+                    <p>
+                        Uploaded{" "}
+                        <ReactTimeago
+                            live={false}
+                            date={new Date(item.startDate).toUTCString()}
+                        />
+                    </p>
                 </div>
             </section>
         </div>
