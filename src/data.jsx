@@ -1,8 +1,9 @@
-import interview from './assets/InterviewMe.png'
-import potter from './assets/Potter.png'
-import lorem from './assets/Lorem.png'
-import { v4 as uuidv4 } from 'uuid';
-const Data = [{
+import interview from "./assets/InterviewMe.png";
+import potter from "./assets/Potter.png";
+import lorem from "./assets/Lorem.png";
+import { v4 as uuidv4 } from "uuid";
+const Data = [
+  {
     id: uuidv4(),
     description: `Pirate ipsum arrgh bounty warp jack.Locker rig hail- shot log jack parrel.Keelhaul swab lugsail me cat blow ensign.Spot dock pinnace quarterdeck yawl ketch cup mizzen coxswain.Tell halter chase locker boatswain pink guns piracy gaff grog.On chain fluke measured arr execution spanker driver.Keelhaul crow's weigh reef nipperkin lanyard timbers spirits keelhaul. Sloop sink dock yard pillage jennys lubber jennys salmagundi bounty.
 
@@ -15,11 +16,12 @@ Gaff ahoy the shrouds anchor pirate bow cat aft.Black nest pounders hearties or 
     image: interview,
     other: "www.aa.gg",
     startDate: "2021-03-09",
-    summary: "Built with GPT-3, React, and Flask. Practice interviews with AI and ace your next interview.",
+    summary:
+      "Built with GPT-3, React, and Flask. Practice interviews with AI and ace your next interview.",
     title: "InterviewMe",
     favs: false
-},
-{
+  },
+  {
     id: uuidv4(),
     description: "aaaa",
     endDate: "2023-03-16",
@@ -28,11 +30,12 @@ Gaff ahoy the shrouds anchor pirate bow cat aft.Black nest pounders hearties or 
     image: lorem,
     other: "www.aa.gg",
     startDate: "2023-03-01",
-    summary: "Lorem ipsum dolor sit amet consectetur. Auctor nibh eleifend tempus egestas libero tristique nec.",
+    summary:
+      "Lorem ipsum dolor sit amet consectetur. Auctor nibh eleifend tempus egestas libero tristique nec.",
     title: "Lorem Ipsum",
     favs: false
-},
-{
+  },
+  {
     id: uuidv4(),
     description: "aaaa",
     endDate: "2023-03-16",
@@ -41,10 +44,24 @@ Gaff ahoy the shrouds anchor pirate bow cat aft.Black nest pounders hearties or 
     image: potter,
     other: "www.aa.gg",
     startDate: "2022-03-09",
-    summary: "Potter ipsum wand elf parchment wingardium. Ghost glass hall tears hair must train. Snape alohamora bathrooms.",
+    summary:
+      "Potter ipsum wand elf parchment wingardium. Ghost glass hall tears hair must train. Snape alohamora bathrooms.",
     title: "Potter Ipsum",
     favs: true
-},
-
-]
-export default Data
+  },
+  {
+    id: uuidv4(),
+    description: "aaaa",
+    endDate: "2023-03-16",
+    github: "www.aa.gg",
+    hackathonName: "aaaaaaa",
+    image: potter,
+    other: "www.aa.gg",
+    startDate: "2022-03-09",
+    summary:
+      "Potter ipsum wand elf parchment wingardium. Ghost glass hall tears hair must train. Snape alohamora bathrooms.",
+    title: "Lores Ipsum",
+    favs: true
+  }
+];
+export default Data;
