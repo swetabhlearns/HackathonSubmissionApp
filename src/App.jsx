@@ -1,6 +1,5 @@
-
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import React, { useContext, useEffect, useState } from 'react'
+import React from 'react'
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './screens/Home';

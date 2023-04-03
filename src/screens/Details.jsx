@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 const Details = () => {
-    const { favsData, fav, setFav, details, setFavData, favData, itemData, setFilterData, filterData } = useContext(DataContext)
+    const { fav, setFav, details, setFilterData, filterData } = useContext(DataContext)
 
     const navigate = useNavigate()
 
